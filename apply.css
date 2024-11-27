@@ -1,0 +1,299 @@
+:root {
+    --primary-color: #6a0dad;
+    --secondary-color: #ff69b4;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --success: #28a745;
+    --gray: #6c757d;
+}
+
+/* Hero Section */
+.application-hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(106, 13, 173, 0.8), rgba(255, 105, 180, 0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/* Job Overview */
+.job-overview {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.overview-grid {
+    text-align: center;
+}
+
+.job-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.job-type {
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.job-type:hover {
+    transform: translateY(-5px);
+}
+
+.job-type i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Requirements Section */
+.requirements-section {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.requirement-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.requirement-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.requirement-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.requirement-card ul li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.requirement-card ul li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Application Process */
+.application-process {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+/* Form Download Section */
+.form-download {
+    padding: 4rem 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+.download-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.download-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.download-content i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.download-button i {
+    font-size: 1rem;
+}
+
+.download-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.form-download {
+    text-align: center;
+    padding: 2rem;
+}
+
+.download-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-notes {
+    border-left: 2px solid var(--light-bg);
+    padding-left: 2rem;
+}
+
+.form-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-notes li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-notes i {
+    color: var(--success);
+}
+
+/* Support Section */
+.application-support {
+    padding: 4rem 0;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.support-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.support-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.support-option:hover {
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .download-card {
+        grid-template-columns: 1fr;
+    }
+
+    .form-notes {
+        border-left: none;
+        border-top: 2px solid var(--light-bg);
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+
+    .support-options {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .requirement-card {
+        padding: 1.5rem;
+    }
+}
