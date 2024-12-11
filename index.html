@@ -5,74 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tender Glove Healthcare</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Improved Header Structure -->
-    <header class="site-header">
-        <div class="header-content">
-            <img src="./images/paste.png" alt="Tender Glove Healthcare Logo" class="logo">
-        </div>
+    <header>
+        <img src="./images/paste.png" alt="Tender Glove Healthcare Logo" class="logo">
+        <h1>Tender Glove Healthcare</h1>
+        <p>We Care Wholeheartedly</p>
     </header>
-
-    <!-- Enhanced Navigation -->
     <nav class="main-nav">
-        <div class="nav-container">
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-menu">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li class="dropdown">
-                    <a href="#services" class="dropdown-trigger">
-                        <i class="fas fa-hands-helping"></i> Services 
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="dorm.html"><i class="fas fa-home"></i> Domiciliary Care</a></li>
-                        <li><a href="live.html"><i class="fas fa-house-user"></i> Live-in Care</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html"><i class="fas fa-medal"></i> Why Choose Us</a></li>
-                <li><a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="apply.html" class="apply-link"><i class="fas fa-user-plus"></i> Apply</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li class="dropdown">
+                <a href="#services"><i class="fas fa-hands-helping"></i> Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="dorm.html"><i class="fas fa-home"></i> Domiciliary Care</a></li>
+                    <li><a href="live.html"><i class="fas fa-house-user"></i> Live-in Care</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html"><i class="fas fa-medal"></i> Why Choose Us</a></li>
+            <li><a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="apply.html" class="apply-link"><i class="fas fa-user-plus"></i> Apply</a></li>
+        </ul>
     </nav>
-
-    <!-- Main Content Area -->
-    <main class="site-main">
-        <!-- Hero Section with improved structure -->
-        <section class="hero-section" id="home">
-            <div class="hero-background">
-                <img src="./images/hero11.jpg" alt="Healthcare Hero" class="hero-img">
-                <div class="hero-overlay"></div>
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <!-- Main hero image -->
+            <img src="./images/hero11.jpg" alt="Healthcare Hero" class="hero-img main-hero-img">
+            <!-- Overlay image (optional decorative elements) -->
+            <img src="./images/hero15.jpg" alt="Overlay Pattern" class="hero-img overlay-img">
+            <!-- Gradient overlay -->
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Compassionate Care for Your Loved Ones</h1>
+            <p>Providing professional and heartfelt healthcare services</p>
+            <div class="hero-buttons">
+                <a href="#services" class="cta-button">
+                    <i class="fas fa-arrow-right"></i> Our Services
+                </a>
             </div>
-            <div class="hero-content">
-                <h1>Compassionate Care for Your Loved Ones</h1>
-                <p>Providing professional and heartfelt healthcare services</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="cta-button">Our Services</a>
+            <!-- Added feature highlights -->
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-heart"></i>
+                    <span>24/7 Care</span>
                 </div>
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <i class="fas fa-clock"></i>
-                        <span>24/7 Care</span>
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-user-nurse"></i>
-                        <span>Expert Staff</span>
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-home"></i>
-                        <span>Home Care</span>
-                    </div>
+                <div class="hero-feature">
+                    <i class="fas fa-user-nurse"></i>
+                    <span>Expert Staff</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-home"></i>
+                    <span>Home Care</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
     <main>
         <section id="services" class="section">
             <h2><i class="fas fa-hands-helping"></i> Our Services</h2>
