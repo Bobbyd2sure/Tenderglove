@@ -1,46 +1,30 @@
-  document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu Toggle
-        const nav = document.querySelector('.main-nav');
-        const menuButton = document.createElement('button');
-        menuButton.className = 'menu-toggle';
-        menuButton.innerHTML = '<i class="fas fa-bars"></i>';
-        nav.appendChild(menuButton);
-    
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.main-nav ul');
-    
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show');
-                menuToggle.innerHTML = navMenu.classList.contains('show') ? 
-                    '<i class="fas fa-times"></i>' : 
-                    '<i class="fas fa-bars"></i>';
-            });
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const nav = document.querySelector('.main-nav');
+    const menuButton = document.createElement('button');
+    menuButton.className = 'menu-toggle';
+    menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+    nav.appendChild(menuButton);
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.main-nav ul');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            menuToggle.innerHTML = navMenu.classList.contains('show') ? 
+                '<i class="fas fa-times"></i>' : 
+                '<i class="fas fa-bars"></i>';
+        });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target)) {
+            navMenu?.classList.remove('show');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
         }
-    
-        // Mobile Dropdown Toggle
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        });
-    
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target)) {
-                navMenu?.classList.remove('show');
-                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+    });
 
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
