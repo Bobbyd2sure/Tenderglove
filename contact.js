@@ -1,5 +1,31 @@
-// Contact Page JavaScript
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle?.addEventListener('click', () => {
+        navMenu?.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.main-nav')) {
+            navMenu?.classList.remove('active');
+        }
+    });
+
+    // Dropdown menu handling for mobile
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+    if (window.innerWidth <= 768) {
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdownMenu = trigger.nextElementSibling;
+                dropdownMenu?.classList.toggle('active');
+            });
+        });
+    }
+
     // Form Handling
     const contactForm = document.getElementById('contactForm');
     const successModal = document.getElementById('successModal');
@@ -124,13 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });

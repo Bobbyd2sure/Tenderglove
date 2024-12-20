@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header and Navigation -->
+    <header>
+        <img src="./images/paste.png" alt="Tender Glove Healthcare Logo" class="logo">
+        <h1>Tender Glove Healthcare</h1>
+        <p>We Care Wholeheartedly</p>
+    </header>
+
+    <nav class="main-nav">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#services" class="dropdown-trigger">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="dorm.html">Domiciliary Care</a></li>
+                    <li><a href="live.html">Live-in Care</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">Why Choose Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html" class="apply-link">Apply <i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
     <!-- Hero Section -->
     <section class="livein-hero">
         <div class="hero-image">
@@ -189,43 +216,6 @@
                         </button>
                     </form>
                 </div>
-                <div class="contact-info">
-                    <div class="info-card">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h4>Call Us</h4>
-                                    <p>+447851571418</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h4>Email Us</h4>
-                                    <p>info@tenderglove.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h4>Visit Us</h4>
-                                    <p>Addresses:
-                                        Winton House<br>
-                                        Shelton Stoke road<br>
-                                        Stoke on Trent<br>
-                                        ST4 2RW<br>
-                                        <br>
-                                        East Durham Business Centre,<br>
-                                        Station Town<br>
-                                        Wingate<br>
-                                        TS28 5HD</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -239,6 +229,51 @@
             <button class="modal-close">Close</button>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Addresses:
+                    Winton House<br>
+                    Shelton Stoke road<br>
+                    Stoke on Trent<br>
+                    ST4 2RW<br>
+                    <br>
+                    East Durham Business Centre,<br>
+                    Station Town<br>
+                    Wingate<br>
+                    TS28 5HD</p>
+                <p><i class="fas fa-phone"></i> +447851571418</p>
+                <p><i class="fas fa-envelope"></i> info@tenderglove.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tender Glove Healthcare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="live.js"></script>
 </body>

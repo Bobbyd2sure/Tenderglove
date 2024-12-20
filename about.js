@@ -1,14 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll functionality
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+    // Navigation Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle?.addEventListener('click', () => {
+        navMenu?.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.main-nav')) {
+            navMenu?.classList.remove('active');
+        }
+    });
+
+    // Dropdown menu handling for mobile
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+    if (window.innerWidth <= 768) {
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdownMenu = trigger.nextElementSibling;
+                dropdownMenu?.classList.toggle('active');
+            });
+        });
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton?.classList.add('visible');
+        } else {
+            backToTopButton?.classList.remove('visible');
+        }
+    });
+
+    backToTopButton?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
 
@@ -90,6 +122,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Quality cards hover effect
+    document.querySelectorAll('.quality-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px)';
+            this.style.background = 'var(--primary-color)';
+            this.style.color = 'var(--white)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+            this.style.background = 'var(--light-bg)';
+            this.style.color = 'var(--text-color)';
+        });
+    });
+
     // Add animation classes if not present in CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -112,17 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 1;
         }
 
-        .quality-card {
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .quality-card.animate-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
         @media (prefers-reduced-motion: reduce) {
             .animate-in {
                 animation: none;
@@ -133,31 +183,34 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // Optional: Add loading state handler
-    window.addEventListener('load', () => {
-        document.body.classList.add('loaded');
-    });
-
-    // Handle mobile menu if present
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    }
-
-    // Add resize handler for animations
+    // Handle resize events
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            // Reset any position-based animations
+            // Reset animations on resize
             document.querySelectorAll('.animate-in').forEach(el => {
-                el.style.transform = '';
+                el.classList.remove('animate-in');
+                void el.offsetWidth; // Trigger reflow
+                el.classList.add('animate-in');
             });
+
+            // Update mobile menu state
+            if (window.innerWidth > 768) {
+                navMenu?.classList.remove('active');
+            }
         }, 250);
+    });
+
+    // Add loading state handler
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+
+    // Error handling for animations
+    window.addEventListener('error', (e) => {
+        console.error('Animation error:', e.error);
+        // Disable animations if there's an error
+        document.body.classList.add('no-animations');
     });
 });

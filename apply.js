@@ -1,5 +1,33 @@
-// Job Application JavaScript
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle?.addEventListener('click', () => {
+        navMenu?.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.main-nav')) {
+            navMenu?.classList.remove('active');
+        }
+    });
+
+    // Dropdown menu handling for mobile
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+    if (window.innerWidth <= 768) {
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdownMenu = trigger.nextElementSibling;
+                dropdownMenu?.classList.toggle('active');
+            });
+        });
+    }
+
     // Add animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -34,11 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Download Form Handler
     const downloadButton = document.getElementById('downloadForm');
     if (downloadButton) {
-        downloadButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Placeholder for actual download functionality
-            alert('Application form download will be available soon. Please contact our recruitment team for assistance.');
-        });
+        downloadButton.removeAttribute('href'); // Remove the old href
+        downloadButton.setAttribute('href', '/forms/TenderGlove-Application-Form.pdf'); // Update with your actual form path
+        downloadButton.setAttribute('download', 'TenderGlove-Application-Form.pdf'); // Set the download filename
     }
 
     // Smooth Scroll
@@ -109,18 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu Toggle (if present)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    }
-
-    // Form Validation (if form exists)
+    // Form Validation
     const applicationForm = document.querySelector('.application-form');
     if (applicationForm) {
         applicationForm.addEventListener('submit', (e) => {
@@ -158,13 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle errors gracefully
     window.addEventListener('error', (e) => {
         console.error('An error occurred:', e.error);
-        // Prevent breaking the entire script
         return false;
     });
 
     // Cleanup function
     return () => {
-        // Remove observers and event listeners if needed
         animateOnScroll.disconnect();
         if (downloadButton) {
             downloadButton.removeEventListener('click', () => {});

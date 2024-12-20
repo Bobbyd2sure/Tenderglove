@@ -8,7 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation remains the same -->
+    <!-- Header and Navigation -->
+    <header>
+        <img src="./images/paste.png" alt="Tender Glove Healthcare Logo" class="logo">
+        <h1>Tender Glove Healthcare</h1>
+        <p>We Care Wholeheartedly</p>
+    </header>
+
+    <nav class="main-nav">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#services" class="dropdown-trigger">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="dorm.html">Domiciliary Care</a></li>
+                    <li><a href="live.html">Live-in Care</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">Why Choose Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html" class="apply-link">Apply <i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
 
     <!-- Job Application Hero Section -->
     <section class="application-hero">
@@ -156,6 +181,46 @@
             </div>
         </section>
     </main>
-    <script src="apply.js"></script>
-</body>
-</html>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Addresses:
+                    Winton House<br>
+                    Shelton Stoke road<br>
+                    Stoke on Trent<br>
+                    ST4 2RW<br>
+                    <br>
+                    East Durham Business Centre,<br>
+                    Station Town<br>
+                    Wingate<br>
+                    TS28 5HD</p>
+                <p><i class="fas fa-phone"></i> +447851571418</p>
+                <p><i class="fas fa-envelope"></i> info@tenderglove.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tender Glove Healthcare. All rights reserved.</p>
+        </div>
+    </footer>
